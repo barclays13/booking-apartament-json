@@ -19,7 +19,7 @@ export default class Calendar extends Component {
       nameMonth: 0,
       year: 0,
       arrNextDate: [],
-      url: "http://localhost:3000/data",
+      url: "https://booking-app-json.herokuapp.com/data",
       data: {},
       cart: []
     }
@@ -112,51 +112,51 @@ export default class Calendar extends Component {
   }
 
   async sendEmail(data) {
-    // const message = await this.getMessage(data);
-    // const templateParams = await {
-    //   message: message,
-    //   to_name: data.name,
-    //   email: data.email
-    // };
+    const message = await this.getMessage(data);
+    const templateParams = await {
+      message: message,
+      to_name: data.name,
+      email: data.email
+    };
 
-    // await emailjs
-    //   .send(
-    //     "service_w5s6n5r",
-    //     "template_1a0x2a8",
-    //     templateParams,
-    //     "user_xlsP7AnJdP2w7LRTTBBr0"
-    //   )
-    //   .then(
-    //     function (response) {
-    //       console.log("SUCCESS!", response.status, response.text);
-    //     },
-    //     function (err) {
-    //       console.log("FAILED...", err);
-    //     }
-    //   );
+    await emailjs
+      .send(
+        "service_w5s6n5r",
+        "template_1a0x2a8",
+        templateParams,
+        "user_xlsP7AnJdP2w7LRTTBBr0"
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (err) {
+          console.log("FAILED...", err);
+        }
+      );
 
-    // const templateParams2 = await {
-    //   message: message,
-    //   to_name: data.name,
-    //   email: "barclays1313@gmail.com"
-    //   email: "info@itspro.by"
-    // };
+    const templateParams2 = await {
+      message: message,
+      to_name: data.name,
+      email: "barclays1313@gmail.com"
+      // email: "info@itspro.by"
+    };
 
-    // await emailjs
-    //   .send(
-    //     "service_w5s6n5r",
-    //     "template_1a0x2a8",
-    //     templateParams2,
-    //     "user_xlsP7AnJdP2w7LRTTBBr0"
-    //   )
-    //   .then(
-    //     function (response) {
-    //       console.log("SUCCESS!", response.status, response.text);
-    //     },
-    //     function (err) {
-    //       console.log("FAILED...", err);
-    //     }
-    //   );
+    await emailjs
+      .send(
+        "service_w5s6n5r",
+        "template_1a0x2a8",
+        templateParams2,
+        "user_xlsP7AnJdP2w7LRTTBBr0"
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (err) {
+          console.log("FAILED...", err);
+        }
+      );
   }
 
   addItem(data) {
